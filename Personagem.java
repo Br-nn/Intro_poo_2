@@ -1,9 +1,22 @@
 public class Personagem{
   //variáveis de instâncias (variáveis de objeto)
   String nome;
-  int energia;
-  int fome;
-  int sono;
+  private int energia = 10;
+  private int fome = 0;
+  private int sono = 0;
+  //construtor padrão (lista de parâmetros vazia)
+  Personagem(){
+    System.out.println("Construindo um personagem...");
+  }
+
+  Personagem(int energia, int fome, int sono){
+    this.energia = energia > 10 || energia < 0 ? this.energia : energia;
+    this.fome = fome > 10 || fome < 0 ? this.fome : fome;
+    this.sono = sono > 10 || sono < 0 ? this.sono : sono;
+  }
+  Personagem(String nome){
+    this.nome = nome;
+  }
   //tipo de retorno --> void (executa e some)
   //nome --> caçar (sempre sem caracteres especiais ou espaço)
   //lista de parâmetros --> "()" lita vazia
@@ -25,12 +38,12 @@ public class Personagem{
       --fome;
       energia = energia + 1 >= 10 ? 10 : energia + 1;
     }else{
-      System.out.printf("%s está sem fome.\n");
+      System.out.printf("%s está sem fome!\n", nome);
     }
   }
   void dormir(){
     if (sono >= 1){
-      System.out.printf("%s dormindo...\n");
+      System.out.printf("%s dormindo...\n", nome);
       --sono;
       energia = energia + 1 <= 10 ? energia++ : 10;
     }else{
@@ -39,6 +52,6 @@ public class Personagem{
   }
 
   void exibirEstado(){
-    System.out.printf("%s: e: %d, f: %d, s: %d\n");
+    System.out.printf("%s: E: %d / F: %d / S: %d\n", nome, energia, fome, sono);
   }
 }
