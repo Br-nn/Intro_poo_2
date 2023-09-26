@@ -27,7 +27,7 @@ public class Personagem{
       energia -=2;
       System.out.printf("%s caçando...\n", nome);
     }else{
-      System.out.printf("%s está sem energia para caçar!", nome);
+      System.out.printf("%s está sem energia para caçar!\n", nome);
     }
     fome = fome + 1 >= 10 ? 10 : fome + 1;
     sono = sono + 1 >= 10 ? 10 : sono + 1;
