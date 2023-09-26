@@ -37,4 +37,8 @@ public class Personagem{
       System.out.printf("%s está sem sono!\n", nome);
     }
   }
+
+  void exibirEstado(){
+    System.out.printf("%s: e: %d, f: %d, s: %d\n");
+  }
 }
