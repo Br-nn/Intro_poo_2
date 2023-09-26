@@ -8,14 +8,33 @@ public class Personagem{
   //nome --> caçar (sempre sem caracteres especiais ou espaço)
   //lista de parâmetros --> "()" lita vazia
   //corpo --> {}
+  //printf permite o uso de cod. especiais "%s"
   void cacar(){
-    System.out.println(nome + " caçando");
+    if (energia >= 2){
+      energia -=2;
+      System.out.printf("%s caçando...\n", nome);
+    }else{
+      System.out.printf("%s está sem energia para caçar!", nome);
+    }
+    fome = fome + 1 >= 10 ? 10 : fome + 1;
+    sono = sono + 1 >= 10 ? 10 : sono + 1;
   }
   void comer(){
-    //printf permite o uso de cod. especiais "%s"
-    System.out.printf("%s comendo\n", nome);
+    if (fome >= 1){
+      System.out.printf("%s comendo...\n", nome);
+      --fome;
+      energia = energia + 1 >= 10 ? 10 : energia + 1;
+    }else{
+      System.out.printf("%s está sem fome.\n");
+    }
   }
   void dormir(){
-    System.out.print(nome + "dormindo");
+    if (sono >= 1){
+      System.out.printf("%s dormindo...\n");
+      --sono;
+      energia = energia + 1 <= 10 ? energia++ : 10;
+    }else{
+      System.out.printf("%s está sem sono!\n", nome);
+    }
   }
 }
