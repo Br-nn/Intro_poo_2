@@ -23,7 +23,7 @@ public class JogoV3 {
       }
       p.exibirEstado();
       System.out.println("-----------------------");
-      Thread.sleep(8000);
+      Thread.sleep(500);
     }
   }
 }
