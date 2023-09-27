@@ -64,6 +64,6 @@ public class Personagem{
   }
 
   void exibirEstado(){
-    System.out.printf("%s: E: %d / F: %d / S: %d\n", nome, energia, fome, sono);
+    System.out.printf("%s: E: %d / F: %d / S: %d / C: %d\n", nome, energia, fome, sono, comida);
   }
 }
